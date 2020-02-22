@@ -1,0 +1,28 @@
+pipeline
+{
+	agent any
+		stages
+			{
+				stage("clean")
+					{
+						steps
+							{
+								sh "./gradlew clean"
+							}
+					}
+				stage(" assemble")
+					{
+						steps
+							{
+								sh "./gradlew assemble"
+							}
+					}
+				stage("build")
+					{
+						steps	
+							{
+								sh "./gradlew build"
+							}
+					}
+			}
+}			
